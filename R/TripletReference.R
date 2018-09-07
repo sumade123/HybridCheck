@@ -185,7 +185,7 @@ Triplet <- setRefClass("Triplet",
                              plot <- ggplot(plotting.frame, aes(x=basepos/1000, y=yvalues)) + geom_line(aes(colour=factor(factors)), show_guide=plottingSettings$Legends, size=0.8) +
                                ylim(0,100) + 
                                xlab("kb") +
-                               ylab("Sequence similarity (%)") + theme(panel.background = element_rect(fill = "white", colour = "grey50")) + scale_colour_manual(name = "", labels=c(combo[1], combo[2], combo[3]),values=c("yellow","purple","cyan")) + theme(legend.background = element_rect(fill = "white")) + opts(panel.grid.major = none, panel.grid.minor = none)
+                               ylab("Sequence similarity (%)") + theme(panel.background = element_rect(fill = "white", colour = "grey50")) + scale_colour_manual(name = "", labels=c(combo[1], combo[2], combo[3]),values=c("yellow","purple","cyan")) + theme(legend.background = element_rect(fill = "white")) #+ opts(panel.grid.major = none, panel.grid.minor = none)
                              plot <- applyPlottingParams(plot, plottingSettings) # title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep="")
                              return(plot)
                            },
