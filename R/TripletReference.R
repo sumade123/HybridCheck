@@ -248,6 +248,7 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                }
                                legendgrob <- grid::rasterGrob(image=legend)
                                bars <- arrangeGrob(bars, legendgrob, widths = c(1, 0.13), ncol = 2)
+                               bars = bars + theme_classic()
                              }
                              return(bars)
                            }
