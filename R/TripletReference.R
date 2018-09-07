@@ -182,12 +182,11 @@ Triplet <- setRefClass("Triplet",
                              plotting.frame <- data.frame(basepos = rep(data$ActualCenter,3),
                                                            yvalues = c(data$AB, data$AC, data$BC),
                                                            factors = rep(1:3, each = nrow(data)))
-                             plot <- ggplot(plotting.frame, aes(x=basepos, y=yvalues)) + geom_line(aes(colour=factor(factors)), show_guide=plottingSettings$Legends, size=0.8) +
+                             plot <- ggplot(plotting.frame, aes(x=basepos/1000, y=yvalues)) + geom_line(aes(colour=factor(factors)), show_guide=plottingSettings$Legends, size=0.8) +
                                ylim(0,100) + 
-                               scale_colour_manual(name = "", labels=c(combo[1], combo[2], combo[3]),values=c("yellow","purple","cyan")) +
-                               xlab("Base Position") +
-                               ylab("% Sequence Similarity") + theme(panel.background = element_rect(fill = "white", colour = "grey50"))
-                             plot <- applyPlottingParams(plot, plottingSettings, title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep=""))
+                               xlab("kb") +
+                               ylab("Sequence similarity (%)") + theme(panel.background = element_rect(fill = "white", colour = "grey50")) + scale_colour_manual(name = "", labels=c(combo[1], combo[2], combo[3]),values=c("yellow","purple","cyan")) + theme(legend.background = element_rect(fill = "white")) + opts(panel.grid.major = none, panel.grid.minor = none)
+                             plot <- applyPlottingParams(plot, plottingSettings) # title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep="")
                              return(plot)
                            },
                          
@@ -235,7 +234,7 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                ylab("Sequence Name") +
                                scale_x_continuous(breaks = c(seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10), plottingSettings$MosaicScale), labels = c(frame$bpX[seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10)], max(frame$bpX))) + 
                                scale_y_discrete(labels = c(ContigNames[3], ContigNames[2], ContigNames[1]))
-                             bars <- applyPlottingParams(bars, plottingSettings, title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep=""))
+                             bars <- applyPlottingParams(bars, plottingSettings) # title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep=""))
                              bars <- bars + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black")) + theme(axis.line=element_blank(),axis.text.x=element_blank(),axis.text.y=element_blank(),axis.ticks=element_blank(),axis.title.x=element_blank(),axis.title.y=element_blank(),panel.background=element_blank(),panel.border=element_blank(),panel.grid.major=element_blank(),panel.grid.minor=element_blank(),plot.background=element_blank())
                              
                              if(plottingSettings$Legends == T){
