@@ -186,7 +186,7 @@ Triplet <- setRefClass("Triplet",
                                ylim(0,100) + 
                                scale_colour_manual(name = "Pairwise Comparrisons", labels=c(combo[1], combo[2], combo[3]),values=c("yellow","purple","cyan")) +
                                xlab("Base Position") +
-                               ylab("% Sequence Similarity")
+                               ylab("% Sequence Similarity") + theme(panel.background = element_rect(fill = "white", colour = "grey50"))
                              plot <- applyPlottingParams(plot, plottingSettings, title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep=""))
                              return(plot)
                            },
