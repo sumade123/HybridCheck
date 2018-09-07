@@ -184,7 +184,7 @@ Triplet <- setRefClass("Triplet",
                                                            factors = rep(1:3, each = nrow(data)))
                              plot <- ggplot(plotting.frame, aes(x=basepos, y=yvalues)) + geom_line(aes(colour=factor(factors)), show_guide=plottingSettings$Legends, size=0.8) +
                                ylim(0,100) + 
-                               scale_colour_manual(name = "Pairwise Comparrisons", labels=c(combo[1], combo[2], combo[3]),values=c("yellow","purple","cyan")) +
+                               scale_colour_manual(name = "", labels=c(combo[1], combo[2], combo[3]),values=c("yellow","purple","cyan")) +
                                xlab("Base Position") +
                                ylab("% Sequence Similarity") + theme(panel.background = element_rect(fill = "white", colour = "grey50"))
                              plot <- applyPlottingParams(plot, plottingSettings, title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep=""))
