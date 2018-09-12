@@ -228,7 +228,7 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                              frame$C_mix <- C_mix
                              rm(A_mix, B_mix, C_mix)
                              plottingFrame <- data.frame(X = frame$X, Y = rep(c(3, 2, 1), each = plottingSettings$MosaicScale), colour = c(frame$A_mix, frame$B_mix, frame$C_mix))
-                             bars <- ggplot(plottingFrame, aes(x = X/1000, y = as.factor(Y))) +
+                             bars <- ggplot(plottingFrame, aes(x = X, y = as.factor(Y))) +
                                geom_raster(aes(fill = colour)) + scale_fill_identity() +
                                xlab("kb") +
                                ylab("Sequence Name") +
