@@ -234,7 +234,7 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                ylab("Sequence Name") +
                                scale_x_continuous(breaks = c(seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10), plottingSettings$MosaicScale), labels = c(frame$bpX[seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10)], max(frame$bpX))) + 
                                scale_y_discrete(labels = c(ContigNames[3], ContigNames[2], ContigNames[1]))
-                             
+                               
                              bars <- applyPlottingParams(bars, plottingSettings) # title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep=""))
                              bars <- bars + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line.x = element_line(colour = "black")) + theme(axis.text.y=element_blank(,axis.ticks.y=element_blank(),axis.title.y=element_blank(),panel.background=element_blank(),panel.border=element_blank(),panel.grid.major=element_blank(),panel.grid.minor=element_blank(),plot.background=element_blank())
                              
