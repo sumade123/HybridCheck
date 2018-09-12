@@ -250,7 +250,7 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                }
                                legendgrob <- grid::rasterGrob(image=legend)
                                recg <- rectGrob(gp=gpar(fill="white"))
-                               bars <- arrangeGrob(bars, legendgrob, recg, widths = c(0.1,1, 0.14), ncol = 3,left=("\n\n"))
+                               bars <- arrangeGrob(bars, legendgrob, recg, widths = c(0.1,1, 0.14), ncol = 3)#left=(""))
                              }
                              return(bars)
                            }
