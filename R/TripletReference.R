@@ -179,10 +179,10 @@ Triplet <- setRefClass("Triplet",
                              if(noScanPerformed()){stop("No sequence similarity scan has been performed for this triplet.")}
                              combo <- unlist(lapply(combn(ContigNames, 2, simplify=FALSE), function(x) paste(x, collapse=":")))
                              data <- ScanData$Table
-                             plotting.frame <- data.frame(basepos = rep(data$ActualCenter,6),
+                             plotting.frame <- data.frame(basepos = rep(data$ActualCenter,3),
                                                            yvalues = c(data$AB, data$AC, data$BC),
                                                            factors = rep(1:3, each = nrow(data)))
-                             plot <- ggplot(plotting.frame, aes(x=basepos/1000, y=yvalues)) + geom_line(aes(colour=factor(factors)), show_guide=plottingSettings$Legends, size=0.8) +
+                             plot <- ggplot(plotting.frame, aes(x=basepos/1000, y=yvalues)) + geom_line(aes(colour=factor(factors)), show_guide=plottingSettings$Legends, size=0.8) + scale_x_continuous(breaks = scales::pretty_breaks(n = 6)) +
                                ylim(0,100) + 
                                xlab("kb") +
                                ylab("Sequence similarity (%)") + theme(panel.background = element_rect(fill = "white", colour = "black"),panel.grid.minor = element_blank(),panel.grid.major = element_blank()) + scale_colour_manual(name = "", labels=c(combo[1], combo[2], combo[3]),values=c("yellow","purple","cyan")) + theme(legend.background = element_rect(fill = "white")) + theme(legend.key = element_rect(fill = "transparent"))#+ opts(panel.grid.major = none, panel.grid.minor = none)
