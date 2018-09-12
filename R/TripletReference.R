@@ -182,7 +182,7 @@ Triplet <- setRefClass("Triplet",
                              plotting.frame <- data.frame(basepos = rep(data$ActualCenter,3),
                                                            yvalues = c(data$AB, data$AC, data$BC),
                                                            factors = rep(1:3, each = nrow(data)))
-                             plot <- ggplot(plotting.frame, aes(x=basepos/1000, y=yvalues)) + geom_line(aes(colour=factor(factors)), show_guide=plottingSettings$Legends, size=0.8) + scale_x_continuous(breaks = scales::pretty_breaks(n = 6), expand_scale = c(mult=0.0125)) +
+                             plot <- ggplot(plotting.frame, aes(x=basepos/1000, y=yvalues)) + geom_line(aes(colour=factor(factors)), show_guide=plottingSettings$Legends, size=0.8) + scale_x_continuous(breaks = scales::pretty_breaks(n = 6), expand = expand_scale = c(mult=0.0125)) +
                                ylim(0,100) + 
                                xlab("kb") +
                                ylab("Sequence similarity (%)") + theme(panel.background = element_rect(fill = "white", colour = "black"),panel.grid.minor = element_blank(),panel.grid.major = element_blank()) + scale_colour_manual(name = "", labels=c(combo[1], combo[2], combo[3]),values=c("yellow","purple","cyan")) + theme(legend.background = element_rect(fill = "white")) + theme(legend.key = element_rect(fill = "transparent"))#+ opts(panel.grid.major = none, panel.grid.minor = none)
@@ -233,7 +233,7 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                xlab("kb") +
                                ylab("Sequence Name") +
                                #scale_x_continuous(breaks = scales::pretty_breaks(n = 10)) +
-                               scale_x_continuous(breaks = c(seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10), plottingSettings$MosaicScale), labels = c(frame$bpX[seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10)], max(frame$bpX)),expand_scale = c(mult=0.0125)) + 
+                               scale_x_continuous(breaks = c(seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10), plottingSettings$MosaicScale), labels = c(frame$bpX[seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10)], max(frame$bpX)), expand = expand_scale = c(mult=0.0125)) + 
                                scale_y_discrete(labels = c(ContigNames[3], ContigNames[2], ContigNames[1]))#,expand = c(0, 0))
                                
                              bars <- applyPlottingParams(bars, plottingSettings) # title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep=""))
