@@ -182,7 +182,7 @@ Triplet <- setRefClass("Triplet",
                              plotting.frame <- data.frame(basepos = rep(data$ActualCenter,3),
                                                            yvalues = c(data$AB, data$AC, data$BC),
                                                            factors = rep(1:3, each = nrow(data)))
-                             plot <- ggplot(plotting.frame, aes(x=basepos/1000, y=yvalues)) + geom_line(aes(colour=factor(factors)), show_guide=plottingSettings$Legends, size=0.8) + scale_x_continuous(breaks = scales::pretty_breaks(n = 6), expand = c(0.0125,0)) +
+                             plot <- ggplot(plotting.frame, aes(x=basepos/1000, y=yvalues)) + geom_line(aes(colour=factor(factors)), show_guide=plottingSettings$Legends, size=0.8) + scale_x_continuous(breaks = scales::pretty_breaks(n = 6), expand = c(0,0)) +
                                ylim(0,100) + 
                                xlab("kb") +
                                ylab("Sequence similarity (%)") + theme(panel.background = element_rect(fill = "white", colour = "black"),panel.grid.minor = element_blank(),panel.grid.major = element_blank()) + scale_colour_manual(name = "", labels=c(combo[1], combo[2], combo[3]),values=c("yellow","purple","cyan")) + theme(legend.background = element_rect(fill = "white")) + theme(legend.key = element_rect(fill = "transparent"))#+ opts(panel.grid.major = none, panel.grid.minor = none)
