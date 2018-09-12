@@ -249,7 +249,7 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                  legend[transparent] <- NA
                                }
                                legendgrob <- grid::rasterGrob(image=legend)
-                               bars <- arrangeGrob(bars, legendgrob, widths = c(1, 0.15), ncol = 2,left=("                 "))
+                               bars <- arrangeGrob(bars, legendgrob, widths = c(1, 0.14), ncol = 2,left=("                 "))
                              }
                              return(bars)
                            }
