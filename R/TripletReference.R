@@ -232,7 +232,8 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                geom_raster(aes(fill = colour)) + scale_fill_identity() +
                                xlab("kb") +
                                ylab("Sequence Name") +
-                               scale_x_continuous(breaks = c(seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10), plottingSettings$MosaicScale), labels = c(frame$bpX[seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10)], max(frame$bpX)),expand = c(0, 0)) + 
+                               scale_x_continuous(breaks = scales::pretty_breaks(n = 10)) +
+                               #scale_x_continuous(breaks = c(seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10), plottingSettings$MosaicScale), labels = c(frame$bpX[seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10)], max(frame$bpX)),expand = c(0, 0)) + 
                                scale_y_discrete(labels = c(ContigNames[3], ContigNames[2], ContigNames[1]),expand = c(0, 0))
                                
                              bars <- applyPlottingParams(bars, plottingSettings) # title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep=""))
