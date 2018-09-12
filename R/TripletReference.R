@@ -237,7 +237,7 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                scale_y_discrete(labels = c(ContigNames[3], ContigNames[2], ContigNames[1]))#,expand = c(0, 0))
                                
                              bars <- applyPlottingParams(bars, plottingSettings)# + theme(legend.box.margin=margin(10,10,10,10)) # title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep=""))
-                             bars <- bars + theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.y=element_blank(),axis.title.y=element_blank()) + theme(panel.background = element_rect(fill = "white", colour = "black")) #+ theme(legend.box.margin=margin(10,10,10,10))#bars <- bars + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line.x = element_line(colour = "black")) + theme(axis.text.y=element_blank(),axis.ticks.y=element_blank(),axis.title.y=element_blank(),panel.background=element_blank(),panel.grid.major=element_blank(),panel.grid.minor=element_blank(),plot.background=element_blank()) 
+                             bars <- bars + theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.y=element_blank(),axis.title.y=element_blank()) + theme(panel.background = element_rect(fill = "white", colour = "black")) + theme(axis.text.y=element_blank(),axis.title.y=element_blank()) + theme(axis.text.x=element_blank(),axis.title.x=element_blank())#+ theme(legend.box.margin=margin(10,10,10,10))#bars <- bars + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line.x = element_line(colour = "black")) + theme(axis.text.y=element_blank(),axis.title.y=element_blank())##axis.ticks.y=element_blank(),axis.title.y=element_blank(),panel.background=element_blank(),panel.grid.major=element_blank(),panel.grid.minor=element_blank(),plot.background=element_blank()) 
                              
                              if(plottingSettings$Legends == T){
                                legend <- readPNG(system.file("extdata/rgblegend.png", package="HybridCheck"), TRUE)
@@ -249,7 +249,7 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                  legend[transparent] <- NA
                                }
                                legendgrob <- grid::rasterGrob(image=legend)
-                               bars <- arrangeGrob(bars, legendgrob, widths = c(1, 0.155), ncol = 2)
+                               bars <- arrangeGrob(bars, legendgrob, widths = c(1, 0.15), ncol = 2)
                              }
                              return(bars)
                            }
