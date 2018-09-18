@@ -156,7 +156,7 @@ Triplet <- setRefClass("Triplet",
                            if("Lines" %in% plottingSettings$What && "Bars" %in% plottingSettings$What){
                              plottedbars <- plotBars(plottingSettings)
                              plottedlines <- plotLines(plottingSettings)
-                             together <- arrangeGrob(plottedbars, plottedlines, ncol=1, heights=c(1.7,2) 
+                             together <- arrangeGrob(plottedbars, plottedlines, ncol=1)#, heights=c(1.7,2) 
                              #grid.text(expression(bold("a")),gp = gpar(fontsize = 18),hjust=0,vjust=0)
                              #grid.text(expression(bold("b")),gp = gpar(fontsize = 18),hjust=0,vjust=0)
                              class(together) <- c("HC_LB_Plot", class(together))
