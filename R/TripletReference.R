@@ -187,7 +187,7 @@ Triplet <- setRefClass("Triplet",
                              plot <- ggplot(plotting.frame, aes(x=basepos/1000, y=yvalues)) + geom_line(aes(colour=factor(factors)), show_guide=plottingSettings$Legends, size=0.8) + scale_x_continuous(breaks = scales::pretty_breaks(n = 6), expand = c(0.0125,0)) +
                                ylim(0,100) + 
                                xlab("kb") +
-                               ylab("Sequence similarity (%)") + theme(panel.background = element_rect(fill = "white", colour = "black"),panel.grid.minor = element_blank(),panel.grid.major = element_blank()) + scale_colour_manual(name = "", labels=c(combo[1], combo[2], combo[3]),values=c("yellow","purple","cyan")) + theme(legend.background = element_rect(fill = "white")) + theme(legend.key = element_rect(fill = "transparent")) + theme(text = element_text(size = 15)) #+ opts(panel.grid.major = none, panel.grid.minor = none)
+                               ylab("Sequence similarity (%)") + theme(panel.background = element_rect(fill = "white", colour = "black"),panel.grid.minor = element_blank(),panel.grid.major = element_blank()) + scale_colour_manual(name = "", labels=c(combo[1], combo[2], combo[3]),values=c("yellow","purple","cyan")) + theme(legend.background = element_rect(fill = "white")) + theme(legend.key = element_rect(fill = "transparent")) + theme(axis.title.y = element_text(size = 15),axis.title.x = element_text(size = 15),axis.text.y = element_text(size = 12),axis.text.x = element_text(size = 12)) #+ opts(panel.grid.major = none, panel.grid.minor = none)
                              plot <- applyPlottingParams(plot, plottingSettings) # title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep="")
                              return(plot)
                            },
@@ -252,7 +252,7 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                }
                                legendgrob <- grid::rasterGrob(image=legend)
                                recg <- rectGrob(gp=gpar(fill="white",col="white"))
-                               bars <- arrangeGrob(recg, bars, legendgrob, widths = c(0.039,1,0.148), ncol = 3)#, heights = c(3,3,3))                       
+                               bars <- arrangeGrob(recg, bars, legendgrob, widths = c(0.0385,1,0.1495), ncol = 3)#, heights = c(3,3,3))                       
                              }
                              return(bars)
                            }
