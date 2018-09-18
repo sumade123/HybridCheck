@@ -156,7 +156,7 @@ Triplet <- setRefClass("Triplet",
                            if("Lines" %in% plottingSettings$What && "Bars" %in% plottingSettings$What){
                              plottedbars <- plotBars(plottingSettings)
                              plottedlines <- plotLines(plottingSettings)
-                             together <- arrangeGrob(plottedbars, plottedlines, ncol=1) 
+                             together <- arrangeGrob(plottedbars, plottedlines, ncol=1, heights=c(1,2) 
                              #grid.text(expression(bold("a")),gp = gpar(fontsize = 18),hjust=0,vjust=0)
                              #grid.text(expression(bold("b")),gp = gpar(fontsize = 18),hjust=0,vjust=0)
                              class(together) <- c("HC_LB_Plot", class(together))
@@ -252,7 +252,7 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                }
                                legendgrob <- grid::rasterGrob(image=legend)
                                recg <- rectGrob(gp=gpar(fill="white",col="white"))
-                               bars <- arrangeGrob(recg, bars, legendgrob, widths = c(0.0545,1,0.1501), ncol = 3, heights = c(15,15,15))                       
+                               bars <- arrangeGrob(recg, bars, legendgrob, widths = c(0.0545,1,0.1501), ncol = 3)#, heights = c(15,15,15))                       
                              }
                              return(bars)
                            }
