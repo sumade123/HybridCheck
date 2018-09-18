@@ -157,8 +157,8 @@ Triplet <- setRefClass("Triplet",
                              plottedbars <- plotBars(plottingSettings)
                              plottedlines <- plotLines(plottingSettings)
                              together <- arrangeGrob(plottedbars, plottedlines, ncol=1) 
-                             grid.text(expression(bold("a")),gp = gpar(fontsize = 18),hjust=0,vjust=0)
-                             grid.text(expression(bold("b")),gp = gpar(fontsize = 18),hjust=0,vjust=0)
+                             #grid.text(expression(bold("a")),gp = gpar(fontsize = 18),hjust=0,vjust=0)
+                             #grid.text(expression(bold("b")),gp = gpar(fontsize = 18),hjust=0,vjust=0)
                              class(together) <- c("HC_LB_Plot", class(together))
                              return(together)
                            } else {
@@ -236,7 +236,8 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                ylab("Sequence Name") +
                                #scale_x_continuous(breaks = scales::pretty_breaks(n = 10)) +
                                scale_x_continuous(breaks = c(seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10), plottingSettings$MosaicScale), labels = c(frame$bpX[seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10)], max(frame$bpX)), expand = c(0.0125,0)) + 
-                               scale_y_discrete(labels = c(ContigNames[3], ContigNames[2], ContigNames[1]))#,expand = c(0, 0))
+                               scale_y_discrete(labels = c(ContigNames[3], ContigNames[2], ContigNames[1]))#,expand = c(0, 0)) 
+                               + annotate("a", x=0, y=0)
                                
                              bars <- applyPlottingParams(bars, plottingSettings)# + theme(legend.box.margin=margin(10,10,10,10)) # title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep=""))
                              bars <- bars + theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank(),axis.ticks.y=element_blank(),axis.title.y=element_blank()) + theme(panel.background = element_rect(fill = "white", colour = "black")) + theme(axis.text.y=element_blank(),axis.title.y=element_blank()) + theme(axis.text.x=element_blank(),axis.title.x=element_blank(),axis.ticks.x=element_blank()) + theme(plot.margin=unit(c(5.5, 5.5, 5.5, 10), "points"))#+ theme(legend.box.margin=margin(10,10,10,10))#bars <- bars + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line.x = element_line(colour = "black")) + theme(axis.text.y=element_blank(),axis.title.y=element_blank())##axis.ticks.y=element_blank(),axis.title.y=element_blank(),panel.background=element_blank(),panel.grid.major=element_blank(),panel.grid.minor=element_blank(),plot.background=element_blank()) 
@@ -252,7 +253,7 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                }
                                legendgrob <- grid::rasterGrob(image=legend)
                                recg <- rectGrob(gp=gpar(fill="white",col="white"))
-                               bars <- arrangeGrob(recg, bars, legendgrob, widths = c(0.37,1, 0.146), ncol = 3)#, heights = c(3,3,3))                       
+                               bars <- arrangeGrob(recg, bars, legendgrob, widths = c(0.1,1, 0.2), ncol = 3, heights = c(1,1,1))                       
                              }
                              return(bars)
                            }
