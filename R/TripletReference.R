@@ -244,7 +244,7 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                              bars <- bars + theme(axis.title.y=element_blank(),axis.text.x=element_blank(),axis.title.x=element_blank(),axis.ticks.x=element_blank()) + theme(plot.margin=unit(c(5.5, 5.5, 0, 0), "points")) + theme(panel.grid.major = element_line(size = 0.5)) + theme(panel.grid.minor = element_line(size = 0.5))#+ theme(legend.box.margin=margin(10,10,10,10))#bars <- bars + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line.x = element_line(colour = "black")) + theme(axis.text.y=element_blank(),axis.title.y=element_blank())##axis.ticks.y=element_blank(),axis.title.y=element_blank(),panel.background=element_blank(),panel.grid.major=element_blank(),panel.grid.minor=element_blank(),plot.background=element_blank()) 
                              
                              if(plottingSettings$Legends == T){
-                               legend <- readPNG(system.file("extdata/rgblegend.png", package="HybridCheck"), TRUE)
+                               legend <- readPNG(system.file("extdata/rgblegend.png", package="HybridCheck"))
                                #if (names(dev.cur()) == "windows"){
                                 # # windows device doesn’t support semi-transparency so we’ll need
                                  ## to flatten the image
