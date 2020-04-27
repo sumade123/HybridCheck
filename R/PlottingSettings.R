@@ -46,7 +46,8 @@ PlottingSettings <- setRefClass("PlottingSettings",
                                   YLabelColour = "character",
                                   Legends = "logical",
                                   LegendFontSize = "numeric",
-                                  MosaicScale = "numeric"),
+                                  MosaicScale = "numeric",
+                                  rgbsize = "numeric"),
                                 
                                 methods = list(
                                   initialize = function(){
@@ -71,6 +72,7 @@ PlottingSettings <- setRefClass("PlottingSettings",
                                     Legends <<- TRUE
                                     LegendFontSize <<- 12
                                     MosaicScale <<- 500
+                                    rgbsize <<- 6.5
                                   },
                                   
                                   setWhat = function(value){
@@ -139,6 +141,7 @@ PlottingSettings <- setRefClass("PlottingSettings",
                                         Legends = Legends <<- settings[[i]],
                                         LegendFontSize = LegendFontSize <<- settings[[i]],
                                         MosaicScale = MosaicScale <<- settings[[i]]
+                                        rgbsize = rgbsize <-- settings[[i]]
                                         )
                                     }
                                   }
