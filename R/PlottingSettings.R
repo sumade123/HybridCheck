@@ -47,7 +47,12 @@ PlottingSettings <- setRefClass("PlottingSettings",
                                   Legends = "logical",
                                   LegendFontSize = "numeric",
                                   MosaicScale = "numeric",
-                                  RgbSize = "numeric"),
+                                  RgbSize = "numeric",
+                                  tl = "numeric",
+                                  tm = "numeric",
+                                  bl = "numeric",
+                                  br = "numeric",
+                                  ),
                                 
                                 methods = list(
                                   initialize = function(){
@@ -72,7 +77,11 @@ PlottingSettings <- setRefClass("PlottingSettings",
                                     Legends <<- TRUE
                                     LegendFontSize <<- 12
                                     MosaicScale <<- 500
-                                    RgbSize <<- 6.5
+                                    RgbSize <<- 0.65
+                                    tl <<- 0.05
+                                    tm <<- 2
+                                    bl <<- 0.07
+                                    br <<- 2.2
                                   },
                                   
                                   setWhat = function(value){
@@ -141,7 +150,11 @@ PlottingSettings <- setRefClass("PlottingSettings",
                                         Legends = Legends <<- settings[[i]],
                                         LegendFontSize = LegendFontSize <<- settings[[i]],
                                         MosaicScale = MosaicScale <<- settings[[i]],
-                                        RgbSize = RgbSize <<- settings[[i]]
+                                        RgbSize = RgbSize <<- settings[[i]],
+                                        tl = tl <<- settings[[i]],
+                                        tm = tm <<- settings[[i]],
+                                        bl = bl <<- settings[[i]],
+                                        br = br <<- settings[[i]],
                                         )
                                     }
                                   }
