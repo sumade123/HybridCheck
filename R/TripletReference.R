@@ -184,7 +184,7 @@ Triplet <- setRefClass("Triplet",
                              plotting.frame <- data.frame(basepos = rep(data$ActualCenter,3),
                                                            yvalues = c(data$AB, data$AC, data$BC),
                                                            factors = rep(1:3, each = nrow(data)))
-                             plot <- ggplot(plotting.frame, aes(x=basepos/1000, y=yvalues)) + geom_line(aes(colour=factor(factors)), show_guide=plottingSettings$Legends, size=0.8) + scale_x_continuous(breaks = scales::pretty_breaks(n = 6), expand = c(0.0125,0)) +
+                             plot <- ggplot(plotting.frame, aes(x=basepos/1000, y=yvalues)) + geom_line(aes(colour=factor(factors)), show_guide=plottingSettings$Legends, size=0.5) + scale_x_continuous(breaks = scales::pretty_breaks(n = 6), expand = c(0.0125,0)) +
                                ylim(0,100) + 
                                xlab("kb") +
                                ylab("Sequence similarity (%)") + scale_colour_manual(name = "", labels=c(gsub("Rpi-","",combo[1]), gsub("Rpi-","",combo[2]), gsub("Rpi-","",combo[3])),values=c("yellow","purple","cyan")) + theme(legend.background = element_rect(fill = "white")) + theme(legend.key = element_rect(fill = "transparent")) + theme(panel.grid.major = element_line(size = 0.5)) + theme(panel.grid.minor = element_line(size = 0.5))#+ opts(panel.grid.major = none, panel.grid.minor = none)
