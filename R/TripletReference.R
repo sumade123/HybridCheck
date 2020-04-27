@@ -242,7 +242,11 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                scale_x_continuous(breaks = c(seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10), limits=c(75,FullDNALength-250), labels = c(frame$bpX[seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10)], max(frame$bpX)), expand = c(0.0125,0))) + 
+=======
+                               scale_x_continuous(breaks = c(seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10), labels = c(frame$bpX[seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10)], max(frame$bpX)), expand = c(0.0125,0))) + 
+>>>>>>> parent of c6ce28c... Update TripletReference.R
 =======
                                scale_x_continuous(breaks = c(seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10), labels = c(frame$bpX[seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10)], max(frame$bpX)), expand = c(0.0125,0))) + 
 >>>>>>> parent of c6ce28c... Update TripletReference.R
