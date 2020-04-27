@@ -250,9 +250,9 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                  #legend <- as.raster(legend[,,1:3])
                                  #legend[transparent] <- NA
                                #}
-                               legendgrob <- grid::rasterGrob(image=legend)
+                               legendgrob <- grid::rasterGrob(image=legend,interpolate=TRUE)
                                recg <- rectGrob(gp=gpar(fill="white",col="white"))
-                               bars <- arrangeGrob(recg, bars, legendgrob, widths = c(0.0545,1,0.0901), ncol = 3)#, heights = c(15,15,15))                       
+                               bars <- arrangeGrob(recg, bars, legendgrob, widths = c(0.0545,1,0.3), ncol = 3)#, heights = c(15,15,15))                       
                              }
                              return(bars)
                            }
