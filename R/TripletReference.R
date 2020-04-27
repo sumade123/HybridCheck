@@ -254,8 +254,8 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                #}
                                legendgrob <- grid::rasterGrob(image=legend)
                                recg <- rectGrob(gp=gpar(fill="white",col="white"))
-                               legendgrob2 <- arrangeGrob(recg,legendgrob,ncol=1,nrow=2,heights=c(0.6,plottingSettings$RgbSize))#unit(c(plottingSettings$tl,plottingSettings$tm,plottingSettings$RgbSize),c("in","in"))
-                               bars <- arrangeGrob(recg, bars, legendgrob2, widths = c(plottingSettings$tl,plottingSettings$tm,plottingSettings$RgbSize), ncol = 3)#, heights = c(15,15,15))                       
+                               legendgrob2 <- arrangeGrob(recg,legendgrob,ncol=1,nrow=2,heights=c(0.1,plottingSettings$RgbSize))#unit(c(plottingSettings$tl,plottingSettings$tm,plottingSettings$RgbSize),c("in","in"))
+                               bars <- arrangeGrob(recg, bars, legendgrob, widths = c(plottingSettings$tl,plottingSettings$tm,plottingSettings$RgbSize), ncol = 3)#, heights = c(15,15,15))                       
                              }
                              return(bars)
                            }
