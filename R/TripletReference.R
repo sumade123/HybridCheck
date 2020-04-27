@@ -190,7 +190,7 @@ Triplet <- setRefClass("Triplet",
                                ylab("Sequence similarity (%)") + scale_colour_manual(name = "", labels=c(gsub("Rpi-","",combo[1]),gsub("Rpi-","",combo[2]),gsub("Rpi-","",combo[3])),values=c("yellow","purple","cyan")) + theme(legend.background = element_rect(fill = "white")) + theme(legend.key = element_rect(fill = "transparent")) + theme(panel.grid.major = element_line(size = 0.5)) + theme(panel.grid.minor = element_line(size = 0.5)) + theme(legend.margin=margin(0,0,0,0))#, legend.box.margin=margin(-10,-10,-10,-10))#+ theme(plot.margin=unit(c(5.5, 0, 5.5, 5.5),"cm"))#+ opts(panel.grid.major = none, panel.grid.minor = none)
                              plot <- applyPlottingParams(plot, plottingSettings) + theme(plot.margin = margin(t=0,l=0))+ theme(axis.title.y = element_text(size = 15,margin = unit(c(0, 4, 0, 0), "mm")),axis.title.x = element_text(size = 15,margin = unit(c(3.5, 0, 0, 0), "mm")),axis.text.y = element_text(size = 12),axis.text.x = element_text(size = 12)) # title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep="")
                              recg <- rectGrob(gp=gpar(fill="white",col="white"))
-                             lines <- arrangeGrob(recg, plot, widths=units(c(plottingSettings$bl,plottingSettings$br),c("in","in")),ncol=2)                  
+                             lines <- arrangeGrob(recg, plot, widths=unit(c(plottingSettings$bl,plottingSettings$br),c("in","in")),ncol=2)                  
                              return(lines)
                            },
                          
@@ -254,7 +254,7 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                #}
                                legendgrob <- grid::rasterGrob(image=legend)
                                recg <- rectGrob(gp=gpar(fill="white",col="white"))
-                               bars <- arrangeGrob(recg, bars, legendgrob, widths = units(c(plottingSettings$tl,plottingSettings$tm,plottingSettings$RgbSize),c("in","in")), ncol = 3)#, heights = c(15,15,15))                       
+                               bars <- arrangeGrob(recg, bars, legendgrob, widths = unit(c(plottingSettings$tl,plottingSettings$tm,plottingSettings$RgbSize),c("in","in")), ncol = 3)#, heights = c(15,15,15))                       
                              }
                              return(bars)
                            }
