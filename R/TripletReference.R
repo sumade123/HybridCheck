@@ -191,7 +191,7 @@ Triplet <- setRefClass("Triplet",
                              plot <- applyPlottingParams(plot, plottingSettings) + theme(axis.title.y = element_text(size = 15,margin = unit(c(0, 4, 0, 0), "mm")),axis.title.x = element_text(size = 15,margin = unit(c(3.5, 0, 0, 0), "mm")),axis.text.y = element_text(size = 12),axis.text.x = element_text(size = 12)) # title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep="")
                                                             recg <- rectGrob(gp=gpar(fill="white",col="white"))
                              recg <- rectGrob(gp=gpar(fill="white",col="white"))
-                             lines <- arrangeGrob(recg, lines, widths=c(0.07,0.9),ncol=2)                  
+                             lines <- arrangeGrob(recg, plot, widths=c(0.07,0.9),ncol=2)                  
                              return(lines)
                            },
                          
