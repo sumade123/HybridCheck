@@ -244,6 +244,7 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                scale_x_continuous(breaks = c(seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10), limits=c(75,FullDNALength-250), labels = c(frame$bpX[seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10)], max(frame$bpX)), expand = c(0.0125,0))) + 
 =======
                                scale_x_continuous(breaks = c(seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10), labels = c(frame$bpX[seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10)], max(frame$bpX)), expand = c(0.0125,0))) + 
@@ -266,6 +267,9 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
 =======
                                scale_x_continuous(breaks = c(seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10), labels = c(frame$bpX[seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10)], max(frame$bpX)), expand = c(0.0125,0))) + 
 >>>>>>> parent of c6ce28c... Update TripletReference.R
+=======
+                               scale_x_continuous(breaks = c(seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10), plottingSettings$MosaicScale), labels = c(frame$bpX[seq(from = 1, to = plottingSettings$MosaicScale, by = plottingSettings$MosaicScale / 10)], max(frame$bpX)), expand = c(0.0125,0)) + 
+>>>>>>> parent of 624aa38... Update TripletReference.R
                                scale_y_discrete(labels = c(paste(gsub("Rpi-","",ContigNames[3])," (A)",sep=""),paste(gsub("Rpi-","",ContigNames[2])," (B)",sep=""), paste(gsub("Rpi-","",ContigNames[1])," (C)",sep="")))#,expand = c(0, 0)) 
                               
                              bars <- applyPlottingParams(bars, plottingSettings)# + theme(legend.box.margin=margin(10,10,10,10)) # title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep=""))
