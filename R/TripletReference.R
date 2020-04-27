@@ -187,9 +187,8 @@ Triplet <- setRefClass("Triplet",
                              plot <- ggplot(plotting.frame, aes(x=basepos/1000, y=yvalues)) + geom_line(aes(colour=factor(factors)), show_guide=plottingSettings$Legends, size=0.5) + scale_x_continuous(breaks = scales::pretty_breaks(n = 6), expand = c(0.0125,0)) +
                                ylim(0,100) + 
                                xlab("kb") +
-                               ylab("Sequence similarity (%)") + scale_colour_manual(name = "", labels=c(gsub("Rpi-","",combo[1]),gsub("Rpi-","",combo[2]),gsub("Rpi-","",combo[3]),values=c("yellow","purple","cyan")) + theme(legend.background = element_rect(fill = "white")) + theme(legend.key = element_rect(fill = "transparent")) + theme(panel.grid.major = element_line(size = 0.5)) + theme(panel.grid.minor = element_line(size = 0.5))#+ opts(panel.grid.major = none, panel.grid.minor = none)
+                               ylab("Sequence similarity (%)") + scale_colour_manual(name = "", labels=c(gsub("Rpi-","",combo[1]),gsub("Rpi-","",combo[2]),gsub("Rpi-","",combo[3])),values=c("yellow","purple","cyan")) + theme(legend.background = element_rect(fill = "white")) + theme(legend.key = element_rect(fill = "transparent")) + theme(panel.grid.major = element_line(size = 0.5)) + theme(panel.grid.minor = element_line(size = 0.5))#+ opts(panel.grid.major = none, panel.grid.minor = none)
                              plot <- applyPlottingParams(plot, plottingSettings) + theme(axis.title.y = element_text(size = 15,margin = unit(c(0, 4, 0, 0), "mm")),axis.title.x = element_text(size = 15,margin = unit(c(3.5, 0, 0, 0), "mm")),axis.text.y = element_text(size = 12),axis.text.x = element_text(size = 12)) # title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep="")
-                                                            recg <- rectGrob(gp=gpar(fill="white",col="white"))
                              recg <- rectGrob(gp=gpar(fill="white",col="white"))
                              lines <- arrangeGrob(recg, plot, widths=c(0.2,2),ncol=2)                  
                              return(lines)
