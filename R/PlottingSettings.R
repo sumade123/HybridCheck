@@ -51,7 +51,7 @@ PlottingSettings <- setRefClass("PlottingSettings",
                                   tl = "numeric",
                                   tm = "numeric",
                                   bl = "numeric",
-                                  br = "numeric",
+                                  br = "numeric"
                                   ),
                                 
                                 methods = list(
@@ -154,7 +154,7 @@ PlottingSettings <- setRefClass("PlottingSettings",
                                         tl = tl <<- settings[[i]],
                                         tm = tm <<- settings[[i]],
                                         bl = bl <<- settings[[i]],
-                                        br = br <<- settings[[i]],
+                                        br = br <<- settings[[i]]
                                         )
                                     }
                                   }
