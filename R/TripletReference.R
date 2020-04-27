@@ -191,7 +191,7 @@ Triplet <- setRefClass("Triplet",
                              plot <- applyPlottingParams(plot, plottingSettings) + theme(axis.title.y = element_text(size = 15,margin = unit(c(0, 4, 0, 0), "mm")),axis.title.x = element_text(size = 15,margin = unit(c(3.5, 0, 0, 0), "mm")),axis.text.y = element_text(size = 12),axis.text.x = element_text(size = 12)) # title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep="")
                                                             recg <- rectGrob(gp=gpar(fill="white",col="white"))
                              recg <- rectGrob(gp=gpar(fill="white",col="white"))
-                             lines <- arrangeGrob(recg, plot, widths=c(0.09,1.3),ncol=2)                  
+                             lines <- arrangeGrob(recg, plot, widths=c(0.2,2),ncol=2)                  
                              return(lines)
                            },
                          
@@ -255,7 +255,7 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                #}
                                legendgrob <- grid::rasterGrob(image=legend)
                                recg <- rectGrob(gp=gpar(fill="white",col="white"))
-                               bars <- arrangeGrob(recg, bars, legendgrob, widths = c(0.0545,1.2,0.4), ncol = 3)#, heights = c(15,15,15))                       
+                               bars <- arrangeGrob(recg, bars, legendgrob, widths = c(0.0545,1.8,0.6), ncol = 3)#, heights = c(15,15,15))                       
                              }
                              return(bars)
                            }
