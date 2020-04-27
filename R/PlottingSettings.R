@@ -141,7 +141,7 @@ PlottingSettings <- setRefClass("PlottingSettings",
                                         Legends = Legends <<- settings[[i]],
                                         LegendFontSize = LegendFontSize <<- settings[[i]],
                                         MosaicScale = MosaicScale <<- settings[[i]],
-                                        RgbSize = RgbSize <-- settings[[i]]
+                                        RgbSize = RgbSize <<- settings[[i]]
                                         )
                                     }
                                   }
