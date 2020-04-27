@@ -140,7 +140,7 @@ PlottingSettings <- setRefClass("PlottingSettings",
                                         YLabelColour = YLabelColour <<- settings[[i]],
                                         Legends = Legends <<- settings[[i]],
                                         LegendFontSize = LegendFontSize <<- settings[[i]],
-                                        MosaicScale = MosaicScale <<- settings[[i]]
+                                        MosaicScale = MosaicScale <<- settings[[i]],
                                         rgbsize = rgbsize <-- settings[[i]]
                                         )
                                     }
