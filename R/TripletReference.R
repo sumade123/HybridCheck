@@ -187,11 +187,11 @@ Triplet <- setRefClass("Triplet",
                              plot <- ggplot(plotting.frame, aes(x=basepos/1000, y=yvalues)) + geom_line(aes(colour=factor(factors)), show_guide=plottingSettings$Legends, size=0.8) + scale_x_continuous(breaks = scales::pretty_breaks(n = 6), expand = c(0.0125,0)) +
                                ylim(0,100) + 
                                xlab("kb") +
-                               ylab("Sequence similarity (%)") + scale_colour_manual(name = "", labels=c(gsub("Rpi-","",combo[1]), gsub("Rpi-","",combo[2]), gsub("Rpi-","",combo[3])),values=c("yellow","purple","cyan")) + theme(legend.background = element_rect(fill = "white")) + theme(legend.key = element_rect(fill = "transparent")) + theme(panel.grid.major = element_line(size = 1)) + theme(panel.grid.minor = element_line(size = 1))#+ opts(panel.grid.major = none, panel.grid.minor = none)
+                               ylab("Sequence similarity (%)") + scale_colour_manual(name = "", labels=c(gsub("Rpi-","",combo[1]), gsub("Rpi-","",combo[2]), gsub("Rpi-","",combo[3])),values=c("yellow","purple","cyan")) + theme(legend.background = element_rect(fill = "white")) + theme(legend.key = element_rect(fill = "transparent")) + theme(panel.grid.major = element_line(size = 0.5)) + theme(panel.grid.minor = element_line(size = 0.5))#+ opts(panel.grid.major = none, panel.grid.minor = none)
                              plot <- applyPlottingParams(plot, plottingSettings) + theme(axis.title.y = element_text(size = 15,margin = unit(c(0, 4, 0, 0), "mm")),axis.title.x = element_text(size = 15,margin = unit(c(3.5, 0, 0, 0), "mm")),axis.text.y = element_text(size = 12),axis.text.x = element_text(size = 12)) # title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep="")
                                                             recg <- rectGrob(gp=gpar(fill="white",col="white"))
                              recg <- rectGrob(gp=gpar(fill="white",col="white"))
-                             lines <- arrangeGrob(recg, plot, widths=c(0.07,0.9),ncol=2)                  
+                             lines <- arrangeGrob(recg, plot, widths=c(0.09,1.3),ncol=2)                  
                              return(lines)
                            },
                          
@@ -242,7 +242,7 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                scale_y_discrete(labels = c(paste(gsub("Rpi-","",ContigNames[3])," (A)",sep=""),paste(gsub("Rpi-","",ContigNames[2])," (B)",sep=""), paste(gsub("Rpi-","",ContigNames[1])," (C)",sep="")))#,expand = c(0, 0)) 
                               
                              bars <- applyPlottingParams(bars, plottingSettings)# + theme(legend.box.margin=margin(10,10,10,10)) # title = paste("Sequence Similarity Between Sequences for Triplet ", ContigNames[1], ":", ContigNames[2], ":", ContigNames[3], sep=""))
-                             bars <- bars + theme(axis.title.y=element_blank(),axis.text.x=element_blank(),axis.title.x=element_blank(),axis.ticks.x=element_blank()) + theme(plot.margin=unit(c(5.5, 5.5, 5.5, 10), "points")) + theme(panel.grid.major = element_blank())#+ theme(legend.box.margin=margin(10,10,10,10))#bars <- bars + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line.x = element_line(colour = "black")) + theme(axis.text.y=element_blank(),axis.title.y=element_blank())##axis.ticks.y=element_blank(),axis.title.y=element_blank(),panel.background=element_blank(),panel.grid.major=element_blank(),panel.grid.minor=element_blank(),plot.background=element_blank()) 
+                             bars <- bars + theme(axis.title.y=element_blank(),axis.text.x=element_blank(),axis.title.x=element_blank(),axis.ticks.x=element_blank()) + theme(plot.margin=unit(c(5.5, 5.5, 5.5, 10), "points")) + theme(panel.grid.major = element_line(size = 0.5)) + theme(panel.grid.minor = element_line(size = 0.5))#+ theme(legend.box.margin=margin(10,10,10,10))#bars <- bars + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line.x = element_line(colour = "black")) + theme(axis.text.y=element_blank(),axis.title.y=element_blank())##axis.ticks.y=element_blank(),axis.title.y=element_blank(),panel.background=element_blank(),panel.grid.major=element_blank(),panel.grid.minor=element_blank(),plot.background=element_blank()) 
                              
                              if(plottingSettings$Legends == T){
                                legend <- readPNG(system.file("extdata/rgblegend.png", package="HybridCheck"), TRUE)
@@ -255,7 +255,7 @@ bars and the NaNs will be dealt with my filling them in black.\n\nTo get rid of 
                                #}
                                legendgrob <- grid::rasterGrob(image=legend)
                                recg <- rectGrob(gp=gpar(fill="white",col="white"))
-                               bars <- arrangeGrob(recg, bars, legendgrob, widths = c(0.0545,1,0.4), ncol = 3)#, heights = c(15,15,15))                       
+                               bars <- arrangeGrob(recg, bars, legendgrob, widths = c(0.0545,1.2,0.4), ncol = 3)#, heights = c(15,15,15))                       
                              }
                              return(bars)
                            }
