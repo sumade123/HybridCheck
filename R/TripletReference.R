@@ -181,7 +181,7 @@ Triplet <- setRefClass("Triplet",
                              if(noScanPerformed()){stop("No sequence similarity scan has been performed for this triplet.")}
                              combo <- unlist(lapply(combn(ContigNames, 2, simplify=FALSE), function(x) paste(x, collapse=":")))     
                              data <- ScanData$Table
-                             plotting.frame <- data.frame(basepos = rep(data$ActualCenter,3),
+                             plotting.frame <- data.frame(basepos = rep((data$ActualCenter)-125,3),
                                                            yvalues = c(data$AB, data$AC, data$BC),
                                                            factors = rep(1:3, each = nrow(data)))
                              plot <- ggplot(plotting.frame, aes(x=basepos/1000, y=yvalues)) + geom_line(aes(colour=factor(factors)), show_guide=plottingSettings$Legends, size=0.5) + scale_x_continuous(breaks = scales::pretty_breaks(n = 6), expand = c(0.0125,0)) +
